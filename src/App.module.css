@@ -1,0 +1,80 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-beige);
+}
+
+.header {
+  border-bottom: 1px solid var(--color-beige);
+  padding: 0 100px;
+}
+
+.controls {
+  border-bottom: 1px solid var(--color-beige);
+  padding: 0 100px;
+}
+
+.logo {
+  margin: 22px 0;
+}
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-around; */
+  padding: 26px 100px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 26px 0;
+}
+
+.button {
+  padding: 14px 36px;
+  background-color: var(--color-green);
+  color: var(--color-white);
+  border-radius: 8px;
+  border: none;
+}
+
+.slider {
+  width: 340px;
+  border-right: 1px solid var(--color-beige);
+  padding-right: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.priceRange {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.priceLimit {
+  display: flex;
+  justify-content: space-between;
+  width: 156px;
+  border: 1px solid var(--color-beige);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.priceLimitAmount {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-blue-dark);
+}
+
+.currency {
+  font-size: 16px;
+  color: var(--color-grey-dark);
+}
+
+.priceLabel {
+  font-size: 16px;
+  color: var(--color-grey-dark);
+}

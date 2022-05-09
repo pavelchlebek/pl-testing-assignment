@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  flex: 0 1 380px;
+  flex-direction: column;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-beige);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-right: 32px;
+  margin-bottom: 32px;
+}
+
+.picture {
+  height: 190px;
+  width: 380px;
+  overflow: hidden;
+}
+
+.details {
+  padding: 16px;
+}
+
+.vehicle {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-beige);
+}
+
+.type {
+  color: var(--color-orange);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.name {
+  font-size: 24px;
+  color: var(--color-blue-dark);
+}
+
+.parameters {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-beige);
+}
+
+.location {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 9px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  padding-bottom: 8px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+}
+
+.count {
+  font-size: 14px;
+  margin-right: 6px;
+  margin-top: 2px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+}
+
+.amount {
+  display: flex;
+  align-items: center;
+}
+
+.amountText {
+  margin-right: 8px;
+}
+
+.price {
+  font-size: 16px;
+  color: var(--color-grey-dark);
+}

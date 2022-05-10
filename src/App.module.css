@@ -141,11 +141,6 @@
   flex-wrap: wrap;
 }
 
-@media (max-width: 400px) {
-  .caravanChoice {
-  }
-}
-
 .instantBookable {
   padding-top: 12px;
   padding-left: 16px;

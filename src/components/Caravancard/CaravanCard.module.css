@@ -10,10 +10,24 @@
   margin-bottom: 32px;
 }
 
+@media (max-width: 400px) {
+  .container {
+    flex: 0 0 360px;
+    margin-right: 0;
+  }
+}
+
 .picture {
   height: 190px;
   width: 380px;
   overflow: hidden;
+}
+
+@media (max-width: 400px) {
+  .picture {
+    width: 343px;
+    height: 190px;
+  }
 }
 
 .details {

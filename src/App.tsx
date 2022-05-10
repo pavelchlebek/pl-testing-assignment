@@ -41,7 +41,7 @@ function App() {
   const [instantBookable, setInstantBookable] = React.useState(true)
 
   const [displayedCaravans, setDisplayedCaravans] = React.useState(caravans)
-  const [resultsDisplayed, setResultDisplayed] = React.useState(6)
+  const [resultsDisplayed, setResultsDisplayed] = React.useState(6)
 
   React.useEffect(() => {
     const filteredCaravans = caravans
@@ -58,7 +58,7 @@ function App() {
   }, [price, type, instantBookable])
 
   React.useEffect(() => {
-    setResultDisplayed(6)
+    setResultsDisplayed(6)
   }, [price, instantBookable, type])
 
   const handleChange = (event: Event, newValue: number | number[], activeThumb: number) => {
@@ -146,7 +146,10 @@ function App() {
       </div>
       <div className={classes.footer}>
         {displayedCaravans.length > resultsDisplayed && (
-          <button className={classes.button} onClick={() => setResultDisplayed((prev) => prev + 6)}>
+          <button
+            className={classes.button}
+            onClick={() => setResultsDisplayed((prev) => prev + 6)}
+          >
             Načíst Další
           </button>
         )}

@@ -5,6 +5,7 @@
   --color-blue-dark: #1f2244;
   --color-orange: #ff5e55;
   --color-green: #119383;
+  --bp: 400px;
 }
 
 * {

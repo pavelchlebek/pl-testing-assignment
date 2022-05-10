@@ -5,13 +5,14 @@
   border: 1px solid var(--color-beige);
 }
 
-.header {
-  border-bottom: 1px solid var(--color-beige);
-  padding: 0 100px;
+@media (max-width: 400px) {
+  .container {
+    max-width: 400px;
+    border: none;
+  }
 }
 
-.controls {
-  display: flex;
+.header {
   border-bottom: 1px solid var(--color-beige);
   padding: 0 100px;
 }
@@ -20,11 +21,32 @@
   margin: 22px 0;
 }
 
+.controls {
+  display: flex;
+  border-bottom: 1px solid var(--color-beige);
+  padding: 0 100px;
+}
+
+@media (max-width: 400px) {
+  .controls {
+    flex-direction: column;
+    padding: 20px 16px;
+  }
+}
+
 .results {
   display: flex;
   flex-wrap: wrap;
   /* justify-content: space-around; */
   padding: 26px 100px;
+}
+
+@media (max-width: 400px) {
+  .results {
+    padding: 26px 16px;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .footer {
@@ -48,6 +70,18 @@
   padding-right: 16px;
   padding-top: 12px;
   padding-bottom: 12px;
+}
+
+@media (max-width: 400px) {
+  .slider {
+    border-right: none;
+    width: 368px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid var(--color-beige);
+  }
 }
 
 .priceRange {
@@ -88,6 +122,14 @@
   border-right: 1px solid var(--color-beige);
 }
 
+@media (max-width: 400px) {
+  .type {
+    border-right: none;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--color-beige);
+  }
+}
+
 .typeHeading {
   margin-bottom: 16px;
   font-size: 16px;
@@ -96,11 +138,23 @@
 
 .caravanChoice {
   display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 400px) {
+  .caravanChoice {
+  }
 }
 
 .instantBookable {
   padding-top: 12px;
   padding-left: 16px;
+}
+
+@media (max-width: 400px) {
+  .instantBookable {
+    padding-left: 0;
+  }
 }
 
 .instantHeading {

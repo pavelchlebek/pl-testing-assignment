@@ -20,6 +20,13 @@ interface IProps {
   shower: boolean
 }
 
+const getType = (vehicleType: string) => {
+  if (vehicleType === "Intergrated") return "Integrál"
+  if (vehicleType === "Campervan") return "Campervan"
+  if (vehicleType === "BuiltIn") return "Vestavba"
+  if (vehicleType === "Alcove") return "Příves"
+}
+
 export const CaravanCard: React.FC<IProps> = ({
   vehicleType,
   instantBookable,
@@ -37,7 +44,7 @@ export const CaravanCard: React.FC<IProps> = ({
       <img className={classes.picture} src={pictureUrl} alt={name} />
       <div className={classes.details}>
         <div className={classes.vehicle}>
-          <h4 className={classes.type}>{vehicleType}</h4>
+          <h4 className={classes.type}>{getType(vehicleType)}</h4>
           <h3 className={classes.name}>{name}</h3>
         </div>
         <div className={classes.parameters}>

@@ -3,14 +3,63 @@ import React from 'react';
 import { Slider } from '@mui/material';
 
 import classes from './App.module.css';
+import { ReactComponent as Action } from './assets/icon-action.svg';
+import { ReactComponent as ExpandIcon } from './assets/icon-expand.svg';
 import { ReactComponent as Logo } from './assets/logo.svg';
-import { CaravanCard } from './components/Caravancard/CaravanCard';
+import { CaravanCard } from './components/CaravanCard/CaravanCard';
+import { CaravanType } from './components/CaravanType/CaravanType';
 import data from './data/data.json';
 
-const caravans = data.items.slice(0, 7)
+const caravans = data.items
+
+const caravanTypes = [
+  {
+    title: "Campervan",
+    description: "Obytka s rozměry osobáku, se kterou dojedete všude.",
+    id: "Campervan",
+  },
+  {
+    title: "Integrál",
+    description: "Král mezi karavany. Luxus na kolech.",
+    id: "Intergrated",
+  },
+  {
+    title: "Vestavba",
+    description: "Celý byt geniálně poskládaný do dodávky.",
+    id: "BuiltIn",
+  },
+  {
+    title: "Přívěs",
+    description: "Tažný karavan za vaše auto. Od kapkovitých až po rodinné.",
+    id: "Alcove",
+  },
+]
 
 function App() {
   const [price, setPrice] = React.useState([1200, 7600])
+  const [type, setType] = React.useState("Intergrated")
+  const [instantBookable, setInstantBookable] = React.useState(true)
+
+  const [displayedCaravans, setDisplayedCaravans] = React.useState(caravans)
+  const [resultsDisplayed, setResultDisplayed] = React.useState(6)
+
+  React.useEffect(() => {
+    const filteredCaravans = caravans
+      .filter((caravan) => caravan.price >= price[0] && caravan.price <= price[1])
+      .filter((caravan) => caravan.vehicleType === type)
+    if (instantBookable) {
+      const onlyInstantBookable = filteredCaravans.filter(
+        (caravan) => caravan.instantBookable === true
+      )
+      setDisplayedCaravans(onlyInstantBookable)
+    } else {
+      setDisplayedCaravans(filteredCaravans)
+    }
+  }, [price, type, instantBookable])
+
+  React.useEffect(() => {
+    setResultDisplayed(6)
+  }, [price, instantBookable, type])
 
   const handleChange = (event: Event, newValue: number | number[], activeThumb: number) => {
     if (Array.isArray(newValue)) {
@@ -46,9 +95,38 @@ function App() {
             </div>
           </div>
         </div>
+        <div className={classes.type}>
+          <div className={classes.typeHeading}>Typ karavanu</div>
+          <div className={classes.caravanChoice}>
+            {caravanTypes.map((caravan, index) => {
+              return (
+                <CaravanType
+                  key={index}
+                  active={type === caravan.id}
+                  description={caravan.description}
+                  onClick={() => setType(caravan.id)}
+                  title={caravan.title}
+                />
+              )
+            })}
+          </div>
+        </div>
+        <div className={classes.instantBookable}>
+          <div className={classes.instantHeading}>
+            <div className={classes.headingText}>Okamžitá rezervace</div>
+            <Action className={classes.actionIcon} />
+          </div>
+          <div
+            className={classes.instantToggle}
+            onClick={() => setInstantBookable((prev) => !prev)}
+          >
+            <div className={classes.instantValue}>{instantBookable ? "Ano" : "Ne"}</div>
+            <ExpandIcon className={classes.expandIcon} />
+          </div>
+        </div>
       </div>
       <div className={classes.results}>
-        {caravans.map((caravan, index) => {
+        {displayedCaravans.slice(0, resultsDisplayed).map((caravan, index) => {
           return (
             <CaravanCard
               key={index}
@@ -67,9 +145,11 @@ function App() {
         })}
       </div>
       <div className={classes.footer}>
-        <button className={classes.button} onClick={() => {}}>
-          Načíst Další
-        </button>
+        {displayedCaravans.length > resultsDisplayed && (
+          <button className={classes.button} onClick={() => setResultDisplayed((prev) => prev + 6)}>
+            Načíst Další
+          </button>
+        )}
       </div>
     </div>
   )

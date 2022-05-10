@@ -11,6 +11,7 @@
 }
 
 .controls {
+  display: flex;
   border-bottom: 1px solid var(--color-beige);
   padding: 0 100px;
 }
@@ -38,10 +39,11 @@
   color: var(--color-white);
   border-radius: 8px;
   border: none;
+  cursor: pointer;
 }
 
 .slider {
-  width: 340px;
+  width: 300px;
   border-right: 1px solid var(--color-beige);
   padding-right: 16px;
   padding-top: 12px;
@@ -57,7 +59,7 @@
 .priceLimit {
   display: flex;
   justify-content: space-between;
-  width: 156px;
+  width: 136px;
   border: 1px solid var(--color-beige);
   border-radius: 8px;
   padding: 12px 14px;
@@ -77,4 +79,53 @@
 .priceLabel {
   font-size: 16px;
   color: var(--color-grey-dark);
+}
+
+.type {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 16px;
+  border-right: 1px solid var(--color-beige);
+}
+
+.typeHeading {
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: var(--color-grey-dark);
+}
+
+.caravanChoice {
+  display: flex;
+}
+
+.instantBookable {
+  padding-top: 12px;
+  padding-left: 16px;
+}
+
+.instantHeading {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.headingText {
+  font-size: 16px;
+  color: var(--color-grey-dark);
+  margin-right: 8px;
+}
+
+.instantToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 162px;
+  padding: 12px;
+  border: 1px solid var(--color-beige);
+  border-radius: 8px;
+}
+
+.instantValue {
+  font-size: 16px;
+  color: var(--color-blue-dark);
 }

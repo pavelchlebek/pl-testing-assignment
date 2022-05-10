@@ -9,7 +9,7 @@ interface IProps {
   onClick: () => void
 }
 
-export const caravanType: React.FC<IProps> = ({ active, description, onClick, title }) => {
+export const CaravanType: React.FC<IProps> = ({ active, description, onClick, title }) => {
   return (
     <div
       onClick={onClick}
